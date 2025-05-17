@@ -1,0 +1,192 @@
+---
+title: "Federal elections - 2022 and 2025"
+author: "Peter GS"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include = F}
+
+knitr::opts_chunk$set(echo = F)
+
+```
+
+
+```{r message = F}
+
+library(tidyverse)
+library(scales)  ## For number format on plot axes
+
+```
+
+
+Load data
+
+```{r}
+
+votes2022 <- read_csv("../data/House1stPrefsByCandidateByVoteType2022-27966-20250517.csv", skip = 1, show_col_types = FALSE)
+
+votes2025 <- read_csv("../data/House1stPrefsByCandidateByVoteType2025-31496-20250517.csv", skip = 1, show_col_types = FALSE)
+
+```
+
+
+```{r}
+
+state_informal_22 <- 
+  votes2022 %>%
+  filter(Surname == "Informal") %>%
+  group_by(StateAb) %>%
+  summarise(state_informal = sum(TotalVotes))
+
+state_informal_22
+
+```
+
+
+```{r}
+
+state_votes_22 <- 
+  votes2022 %>%
+  group_by(StateAb) %>%
+  summarise(state_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+state_votes_22 <- 
+  full_join(state_votes_22, state_informal_22) %>%
+  mutate(state_formal = state_votes - state_informal)
+
+
+N_votes_22 <- 
+  state_votes_22 %>%
+  summarise(sum(state_votes))
+
+```
+
+```{r}
+
+state_informal_25 <- 
+  votes2025 %>%
+  filter(Surname == "Informal") %>%
+  group_by(StateAb) %>%
+  summarise(state_informal = sum(TotalVotes))
+
+state_informal_25
+
+```
+
+
+```{r}
+
+state_votes_25 <- 
+  votes2025 %>%
+  group_by(StateAb) %>%
+  summarise(state_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+state_votes_25 <- 
+  full_join(state_votes_25, state_informal_25) %>%
+  mutate(state_formal = state_votes - state_informal)
+
+N_votes_25 <- 
+  state_votes_25 %>%
+  summarise(sum(state_votes))
+
+```
+
+
+```{r}
+
+N_votes_25 - N_votes_22
+
+```
+
+
+```{r}
+
+party_nm <- 
+  votes2022 %>%
+  distinct(PartyNm)
+  
+party_nm
+
+```
+
+
+
+```{r}
+
+state_votes_2225 <-
+  bind_rows(state_votes_22, state_votes_25)
+
+state_votes_2225
+
+```
+
+
+```{r}
+
+ggplot(state_votes_2225, aes(x = StateAb, y = state_votes, 
+                             shape = factor(Year))) +
+  geom_point() +
+  labs(x = "State", y = "No. of votes") +
+  scale_y_continuous(labels = label_comma()) +
+  guides(shape = guide_legend(title = "Year")) +
+  ggtitle("Total number of ballot papers received (formal and informal)")
+         
+```
+
+
+Percentage of votes for ALP in 2022 and 2025
+
+```{r}
+
+alp_n_22 <-
+  votes2022 %>%
+  filter(PartyAb == "ALP") %>%
+  group_by(StateAb) %>%
+  summarise(alp_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+alp_n_22 <- full_join(alp_n_22, state_votes_22)
+  
+alp_n_25 <-
+  votes2025 %>%
+  filter(PartyAb == "ALP") %>%
+  group_by(StateAb) %>%
+  summarise(alp_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+alp_n_25 <- full_join(alp_n_25, state_votes_25)
+
+alp_n_2225 <-
+  bind_rows(alp_n_22, alp_n_25)
+
+
+```
+
+
+```{r}
+
+alp_pc_2225 <- 
+  full_join(alp_n_2225, state_votes_2225) %>%
+  mutate(alp_pc = alp_votes / state_formal * 100)
+
+```
+
+
+```{r}
+
+ggplot(alp_pc_2225, aes(x = StateAb, y = alp_pc, 
+                        shape = factor(Year))) +
+  geom_point() +
+  labs(x = "State", y = "Percentage of votes") +
+  scale_y_continuous(labels = label_comma()) +
+  guides(shape = guide_legend(title = "Year")) +
+  ggtitle("ALP: Percentage of first preference votes")
+
+
+```
+
