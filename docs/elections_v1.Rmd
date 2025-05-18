@@ -7,6 +7,9 @@ output:
     toc: true
     toc_depth: 3
     toc_float: true
+  pdf_document:
+    toc: true
+    toc_depth: '3'
 ---
 
 ```{r setup, include = F}
@@ -37,6 +40,8 @@ hvotes2025 <- read_csv("../data/House1stPrefsByCandidateByVoteType2025-31496-202
 ```
 
 <br>
+
+# House of Representatives
 
 ## Informal votes by state - 2022
 
@@ -165,17 +170,18 @@ h_state_votes_2225 %>%
 ggplot(h_state_votes_2225, aes(x = StateAb, y = state_votes, 
                                shape = factor(Year))) +
   #geom_point() +
-  geom_jitter(width = 0.125) +
-  labs(x = "State", y = "No. of votes") +
+  geom_jitter(width = 0.133) +
   scale_y_continuous(labels = label_comma()) +
   guides(shape = guide_legend(title = "Year")) +
-  ggtitle("Total number of ballot papers received (formal and informal)")
+  labs(title = "House of Reps: Total no. of ballot papers received (formal & informal)", 
+       subtitle = "AEC data at 2025-05-18", 
+       x = "State", y = "No. of votes") 
          
 ```
 
 <br>
 
-## Percentage of first preference votes for ALP - 2022 and 2025
+## House of Reps: Percentage of first preference votes for ALP - 2022 and 2025
 
 ```{r message = F}
 
@@ -239,9 +245,10 @@ h_alp_pc_2225 %>%
 ggplot(h_alp_pc_2225, aes(x = StateAb, y = alp_pc, 
                           shape = factor(Year))) +
   geom_point() +
-  labs(x = "State", y = "Percentage of votes") +
   guides(shape = guide_legend(title = "Year")) +
-  ggtitle("ALP: Percentage of first preference votes")
+  labs(title = "House of Reps: ALP - Percentage of first preference votes", 
+       subtitle = "AEC data at 2025-05-18", 
+       x = "State", y = "Percentage of votes")
 
 
 ```
@@ -274,7 +281,7 @@ hvotes2022 %>%
 
 <br>
 
-## Percentage of first preference votes for the Greens - 2022 and 2025
+## House of Reps: Percentage of first preference votes for the Greens - 2022 and 2025
 
 There are three separate figures for the Greens in the AEC voting figures: Australian Greens, Qld Greens and WA Greens. 
 
@@ -343,10 +350,426 @@ h_grn_pc_2225 %>%
 ggplot(h_grn_pc_2225, aes(x = StateAb, y = grn_pc, 
                           shape = factor(Year))) +
   geom_point() +
-  labs(x = "State", y = "Percentage of votes") +
   scale_y_continuous(breaks = seq(10, 20, 2)) +
   guides(shape = guide_legend(title = "Year")) +
-  ggtitle("Greens: Percentage of first preference votes")
+  labs(title = "House of Reps: Greens - Percentage of first preference votes", 
+       subtitle = "AEC data at 2025-05-18",
+       x = "State", y = "Percentage of votes")
+
 
 ```
+
+<br>
+
+## House of Reps NSW: Greens votes in 2022 and 2025
+
+```{r}
+
+grn_n_div_2022 <-
+  hvotes2022 %>%
+  filter(StateAb == "NSW") %>%
+  filter(PartyAb == "GRN") %>%
+  select(StateAb, PartyAb, DivisionNm, TotalVotes) %>%
+  mutate(Year = "2022") %>%
+  write_csv(., file = "grn_n_div_2022.csv")
+
+```
+
+
+
+```{r}
+
+grn_n_div_2025 <-
+  hvotes2025 %>%
+  filter(StateAb == "NSW") %>%
+  filter(PartyAb == "GRN") %>%
+  select(StateAb, PartyAb, DivisionNm, TotalVotes) %>%
+  mutate(Year = "2025") %>%
+  write_csv(., file = "grn_n_div_2025.csv")
+
+```
+
+
+```{r eval = F}
+
+ggplot(grn_n_div_2025, aes(x = DivisionNm, y = TotalVotes)) +
+  geom_point() +
+  labs(title = "House of Reps NSW: Greens votes - 2025",
+       subtitle = "AEC data at 2025-05-18",
+       x = "Electorate", y = "No. of votes") +
+  theme(axis.text.x = element_text(angle = 75))
+
+```
+
+
+```{r}
+
+grn_n_div_2225 <- bind_rows(grn_n_div_2022, grn_n_div_2025) %>%
+  write_csv(., file = "grn_n_div_2225.csv")
+
+```
+
+
+```{r out.width = "120%"}
+
+ggplot(grn_n_div_2225, aes(x = DivisionNm, y = TotalVotes,
+                           shape = factor(Year))) +
+  geom_point() +
+  guides(shape = guide_legend(title = "Year")) +
+  labs(title = "House of Reps NSW: Greens votes - 2022 and 2025",
+       subtitle = "AEC data at 2025-05-18",
+       x = "Electorate", y = "No. of votes") +
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
+
+```
+
+
+<br>
+<br>
+
+# Senate
+
+```{r}
+
+## Load data
+
+svotes2022 <- read_csv("../data/Senate1stPrefsByStateByGroupByVoteType2022-27966-20250518.csv", skip = 1, show_col_types = FALSE)
+
+svotes2025 <- read_csv("../data/Senate1stPrefsByStateByGroupByVoteType2025-31496-20250518.csv", skip = 1, show_col_types = FALSE)
+
+```
+
+<br>
+
+## Informal votes by state - 2022
+
+Informal Senate votes have already been removed by the Australian Electoral Commission in the data available for importing.
+
+```{r eval = F}
+
+s_state_informal_22 <- 
+  svotes2022 %>%
+  filter(Surname == "Informal") %>%
+  group_by(StateAb) %>%
+  summarise(state_informal = sum(TotalVotes))
+
+s_state_informal_22 %>%
+  kbl() %>%
+  kable_styling(full_width = F)
+
+```
+
+
+```{r message = F}
+
+## Remove "message = F" to see what full_join is using to make the join.
+
+s_state_votes_22 <- 
+  svotes2022 %>%
+  group_by(StateAb) %>%
+  summarise(state_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+#s_state_votes_22 <- 
+#  full_join(s_state_votes_22, s_state_informal_22) %>%
+  ##full_join(state_votes_22, state_informal_22), by = join_by(StateAb)) %>%
+#  mutate(state_formal = state_votes - state_informal)
+#  mutate(state_formal = state_votes)
+
+s_state_votes_22$state_formal <- s_state_votes_22$state_votes
+  
+N_svotes_22 <- 
+  s_state_votes_22 %>%
+  summarise(sum(state_votes))
+
+```
+
+<br>
+
+## Informal votes by state - 2025
+
+Informal Senate votes have already been removed by the Australian Electoral Commission in the data available for importing.
+
+```{r eval = F}
+
+s_state_informal_25 <- 
+  svotes2025 %>%
+  filter(Surname == "Informal") %>%
+  group_by(StateAb) %>%
+  summarise(state_informal = sum(TotalVotes))
+
+s_state_informal_25 %>%
+  kbl() %>%
+  kable_styling(full_width = F)
+
+```
+
+
+```{r message = F}
+
+s_state_votes_25 <- 
+  svotes2025 %>%
+  group_by(StateAb) %>%
+  summarise(state_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+#s_state_votes_25 <- 
+#  full_join(s_state_votes_25, s_state_informal_25) %>%
+#  mutate(state_formal = state_votes - state_informal)
+
+s_state_votes_25$state_formal <- s_state_votes_25$state_votes
+
+N_svotes_25 <- 
+  s_state_votes_25 %>%
+  summarise(sum(state_votes))
+
+```
+
+<br>
+
+## Difference in total number of ballot papers lodged between 2022 and 2025
+
+```{r}
+
+s_diff_N <- N_svotes_25 - N_svotes_22
+
+##s_diff_N
+
+```
+
+There were `r s_diff_N` more voters in 2025 than in 2022.
+
+```{r}
+
+party_nm <- 
+  svotes2022 %>%
+  distinct(GroupNm)
+  
+#party_nm
+
+```
+
+<br>
+
+## Votes by state - 2022 and 2025
+
+```{r}
+
+s_state_votes_2225 <-
+  bind_rows(s_state_votes_22, s_state_votes_25) %>%
+  select(StateAb, Year, state_votes,
+         #state_informal,
+         state_formal) %>%
+  arrange(StateAb, Year)
+
+s_state_votes_2225 %>%
+  mutate(across(state_votes:state_formal, ~ number(.x, big.mark = ","))) %>%
+  kable(booktabs = T, col.names = names(s_state_votes_2225), 
+        align = "lcrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+
+
+```
+
+<br>
+
+```{r}
+
+ggplot(s_state_votes_2225, aes(x = StateAb, y = state_votes, 
+                               shape = factor(Year))) +
+  #geom_point() +
+  geom_jitter(width = 0.133) +
+  scale_y_continuous(labels = label_comma()) +
+  guides(shape = guide_legend(title = "Year")) +
+  labs(title = "Senate: Total no. of ballot papers received (formal & informal)", 
+       subtitle = "AEC data at 2025-05-18",
+       x = "State", y = "No. of formal votes")
+         
+```
+
+<br>
+
+## Senate: Percentage of first preference votes for ALP - 2022 and 2025
+
+```{r message = F}
+
+s_alp_n_22 <-
+  svotes2022 %>%
+  filter(GroupAb == "ALP") %>%
+  group_by(StateAb) %>%
+  summarise(alp_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+s_alp_n_22 <- full_join(s_alp_n_22, s_state_votes_22)
+
+## Note full_join uses: Joining with `by = join_by(StateAb, Year)` 
+
+s_alp_n_25 <-
+  svotes2025 %>%
+  filter(GroupAb == "ALP") %>%
+  group_by(StateAb) %>%
+  summarise(alp_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+s_alp_n_25 <- full_join(s_alp_n_25, s_state_votes_25)
+
+s_alp_n_2225 <-
+  bind_rows(s_alp_n_22, s_alp_n_25)
+
+
+```
+
+
+```{r message = F}
+
+s_alp_pc_2225 <- 
+  full_join(s_alp_n_2225, s_state_votes_2225) %>%
+  mutate(alp_pc = alp_votes / state_formal * 100) %>%
+  select(StateAb, Year, state_votes,
+         #state_informal,
+         state_formal,
+         alp_votes, alp_pc) %>%
+  arrange(StateAb, Year)
+
+## "select" must go into code above so columns are in right order 
+##   for section below
+
+## Format the data to display a nice table
+
+s_alp_pc_2225 %>%
+  mutate(across(state_votes:alp_votes, ~ number(.x, big.mark = ","))) %>%
+  mutate(across("alp_pc", ~ round(.x, 1))) %>%
+  kable(booktabs = T, col.names = names(s_alp_pc_2225), 
+        align = "lcrrrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+         
+
+```
+
+<br>
+
+
+```{r}
+
+ggplot(s_alp_pc_2225, aes(x = StateAb, y = alp_pc, 
+                          shape = factor(Year))) +
+  geom_point() +
+  guides(shape = guide_legend(title = "Year")) +
+  labs(title = "Senate: ALP - Percentage of first preference votes", 
+       subtitle = "AEC data at 2025-05-18",
+       x = "State", y = "Percentage of votes")
+
+
+```
+
+<br>
+
+```{r}
+
+## Check party names in 2022 and 2025
+
+svotes2022 %>%
+  select(GroupAb:GroupNm) %>%
+  distinct(GroupAb, GroupNm, .keep_all = T) %>%
+  write_csv(., file = "party_names_22.csv")
+
+svotes2025 %>%
+  select(GroupAb:GroupNm) %>%
+  distinct(GroupAb, GroupNm, .keep_all = T) %>%
+  write_csv(., file = "party_names_25.csv")
+
+```
+
+
+```{r include = F}
+
+svotes2022 %>%
+  filter(GroupNm == "A.L.P.")
+
+```
+
+<br>
+
+## Senate: Percentage of first preference votes for the Greens - 2022 and 2025
+
+There are three separate figures for the Greens in the AEC voting figures: Australian Greens, Qld Greens and WA Greens. 
+
+```{r message = F}
+
+s_grn_n_22 <-
+  svotes2022 %>%
+  filter(GroupAb == "GRN") %>%
+  group_by(StateAb) %>%
+  summarise(grn_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+s_grn_n_22 <-
+  full_join(s_grn_n_22, s_state_votes_22) %>%
+  write_csv(., file = "s_grn_n_22.csv")
+
+
+s_grn_n_25 <-
+  svotes2025 %>%
+  filter(GroupAb == "GRN") %>%
+  group_by(StateAb) %>%
+  summarise(grn_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+s_grn_n_25 <-
+  full_join(s_grn_n_25, s_state_votes_25) %>%
+  write_csv(., file = "s_grn_n_25.csv")
+
+
+s_grn_n_2225 <-
+  bind_rows(s_grn_n_22, s_grn_n_25)
+
+```
+
+
+
+```{r message = F}
+
+s_grn_pc_2225 <- 
+  full_join(s_grn_n_2225, s_state_votes_2225) %>%
+  mutate(grn_pc = grn_votes / state_formal * 100) %>%
+  select(StateAb, Year, state_votes,
+         #state_informal,
+         state_formal,
+         grn_votes, grn_pc) %>%
+  arrange(StateAb, Year)
+
+## "select" must go into code above so columns are in right order 
+##   for section below
+
+## Format the data to display a nice table
+
+s_grn_pc_2225 %>%
+  mutate(across(state_votes:grn_votes, ~ number(.x, big.mark = ","))) %>%
+  mutate(across("grn_pc", ~ round(.x, 1))) %>%
+  kable(booktabs = T, col.names = names(s_grn_pc_2225), 
+        align = "lcrrrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+         
+
+```
+
+<br>
+
+
+```{r}
+
+ggplot(s_grn_pc_2225, aes(x = StateAb, y = grn_pc, 
+                          shape = factor(Year))) +
+  geom_point() +
+  scale_y_continuous(breaks = seq(10, 20, 2)) +
+  guides(shape = guide_legend(title = "Year")) +
+  labs(title = "Senate: Greens - Percentage of first preference votes", 
+       subtitle = "AEC data at 2025-05-18", 
+       x = "State", y = "Percentage of votes")
+
+```
+
 
