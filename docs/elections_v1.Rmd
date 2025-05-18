@@ -3,8 +3,10 @@ title: "Federal elections - 2022 and 2025"
 author: "Peter GS"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
-  html_document: default
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
 ---
 
 ```{r setup, include = F}
@@ -18,119 +20,152 @@ knitr::opts_chunk$set(echo = F)
 
 library(tidyverse)
 library(scales)  ## For number format on plot axes
+library(kableExtra)
 
 ```
 
 
-Load data
 
 ```{r}
 
-votes2022 <- read_csv("../data/House1stPrefsByCandidateByVoteType2022-27966-20250517.csv", skip = 1, show_col_types = FALSE)
+## Load data
 
-votes2025 <- read_csv("../data/House1stPrefsByCandidateByVoteType2025-31496-20250517.csv", skip = 1, show_col_types = FALSE)
+hvotes2022 <- read_csv("../data/House1stPrefsByCandidateByVoteType2022-27966-20250517.csv", skip = 1, show_col_types = FALSE)
+
+hvotes2025 <- read_csv("../data/House1stPrefsByCandidateByVoteType2025-31496-20250517.csv", skip = 1, show_col_types = FALSE)
 
 ```
 
+<br>
+
+## Informal votes by state - 2022
 
 ```{r}
 
-state_informal_22 <- 
-  votes2022 %>%
+h_state_informal_22 <- 
+  hvotes2022 %>%
   filter(Surname == "Informal") %>%
   group_by(StateAb) %>%
   summarise(state_informal = sum(TotalVotes))
 
-state_informal_22
+h_state_informal_22 %>%
+  kbl() %>%
+  kable_styling(full_width = F)
 
 ```
 
 
-```{r}
+```{r message = F}
 
-state_votes_22 <- 
-  votes2022 %>%
+## Remove "message = F" to see what full_join is using to make the join.
+
+h_state_votes_22 <- 
+  hvotes2022 %>%
   group_by(StateAb) %>%
   summarise(state_votes = sum(TotalVotes)) %>%
   mutate(Year = "2022")
 
-state_votes_22 <- 
-  full_join(state_votes_22, state_informal_22) %>%
+h_state_votes_22 <- 
+  full_join(h_state_votes_22, h_state_informal_22) %>%
+  #full_join(state_votes_22, state_informal_22), by = join_by(StateAb)) %>%
   mutate(state_formal = state_votes - state_informal)
 
 
-N_votes_22 <- 
-  state_votes_22 %>%
+N_hvotes_22 <- 
+  h_state_votes_22 %>%
   summarise(sum(state_votes))
 
 ```
 
+<br>
+
+## Informal votes by state - 2025
+
 ```{r}
 
-state_informal_25 <- 
-  votes2025 %>%
+h_state_informal_25 <- 
+  hvotes2025 %>%
   filter(Surname == "Informal") %>%
   group_by(StateAb) %>%
   summarise(state_informal = sum(TotalVotes))
 
-state_informal_25
+h_state_informal_25 %>%
+  kbl() %>%
+  kable_styling(full_width = F)
 
 ```
 
 
-```{r}
+```{r message = F}
 
-state_votes_25 <- 
-  votes2025 %>%
+h_state_votes_25 <- 
+  hvotes2025 %>%
   group_by(StateAb) %>%
   summarise(state_votes = sum(TotalVotes)) %>%
   mutate(Year = "2025")
 
-state_votes_25 <- 
-  full_join(state_votes_25, state_informal_25) %>%
+h_state_votes_25 <- 
+  full_join(h_state_votes_25, h_state_informal_25) %>%
   mutate(state_formal = state_votes - state_informal)
 
-N_votes_25 <- 
-  state_votes_25 %>%
+N_hvotes_25 <- 
+  h_state_votes_25 %>%
   summarise(sum(state_votes))
 
 ```
 
+<br>
+
+## Difference in total number of ballot papers lodged between 2022 and 2025
 
 ```{r}
 
-N_votes_25 - N_votes_22
+h_diff_N <- N_hvotes_25 - N_hvotes_22
+
+##diff_N
 
 ```
 
+There were `r h_diff_N` more voters in 2025 than in 2022.
 
 ```{r}
 
 party_nm <- 
-  votes2022 %>%
+  hvotes2022 %>%
   distinct(PartyNm)
   
-party_nm
+#party_nm
 
 ```
 
+<br>
 
+## Votes by state - 2022 and 2025
 
 ```{r}
 
-state_votes_2225 <-
-  bind_rows(state_votes_22, state_votes_25)
+h_state_votes_2225 <-
+  bind_rows(h_state_votes_22, h_state_votes_25) %>%
+  select(StateAb, Year, state_votes, state_informal, state_formal) %>%
+  arrange(StateAb, Year)
 
-state_votes_2225
+h_state_votes_2225 %>%
+  mutate(across(state_votes:state_formal, ~ number(.x, big.mark = ","))) %>%
+  kable(booktabs = T, col.names = names(h_state_votes_2225), 
+        align = "lcrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+
 
 ```
-
+<br>
 
 ```{r}
 
-ggplot(state_votes_2225, aes(x = StateAb, y = state_votes, 
-                             shape = factor(Year))) +
-  geom_point() +
+ggplot(h_state_votes_2225, aes(x = StateAb, y = state_votes, 
+                               shape = factor(Year))) +
+  #geom_point() +
+  geom_jitter(width = 0.125) +
   labs(x = "State", y = "No. of votes") +
   scale_y_continuous(labels = label_comma()) +
   guides(shape = guide_legend(title = "Year")) +
@@ -138,55 +173,180 @@ ggplot(state_votes_2225, aes(x = StateAb, y = state_votes,
          
 ```
 
+<br>
 
-Percentage of votes for ALP in 2022 and 2025
+## Percentage of first preference votes for ALP - 2022 and 2025
 
-```{r}
+```{r message = F}
 
-alp_n_22 <-
-  votes2022 %>%
+h_alp_n_22 <-
+  hvotes2022 %>%
   filter(PartyAb == "ALP") %>%
   group_by(StateAb) %>%
   summarise(alp_votes = sum(TotalVotes)) %>%
   mutate(Year = "2022")
 
-alp_n_22 <- full_join(alp_n_22, state_votes_22)
-  
-alp_n_25 <-
-  votes2025 %>%
+h_alp_n_22 <- full_join(h_alp_n_22, h_state_votes_22)
+
+## Note full_join uses: Joining with `by = join_by(StateAb, Year)` 
+
+h_alp_n_25 <-
+  hvotes2025 %>%
   filter(PartyAb == "ALP") %>%
   group_by(StateAb) %>%
   summarise(alp_votes = sum(TotalVotes)) %>%
   mutate(Year = "2025")
 
-alp_n_25 <- full_join(alp_n_25, state_votes_25)
+h_alp_n_25 <- full_join(h_alp_n_25, h_state_votes_25)
 
-alp_n_2225 <-
-  bind_rows(alp_n_22, alp_n_25)
+h_alp_n_2225 <-
+  bind_rows(h_alp_n_22, h_alp_n_25)
 
 
 ```
 
 
-```{r}
+```{r message = F}
 
-alp_pc_2225 <- 
-  full_join(alp_n_2225, state_votes_2225) %>%
-  mutate(alp_pc = alp_votes / state_formal * 100)
+h_alp_pc_2225 <- 
+  full_join(h_alp_n_2225, h_state_votes_2225) %>%
+  mutate(alp_pc = alp_votes / state_formal * 100) %>%
+  select(StateAb, Year, state_votes, state_informal, state_formal,
+         alp_votes, alp_pc) %>%
+  arrange(StateAb, Year)
+
+## "select" must go into code above so columns are in right order 
+##   for section below
+
+## Format the data to display a nice table
+
+h_alp_pc_2225 %>%
+  mutate(across(state_votes:alp_votes, ~ number(.x, big.mark = ","))) %>%
+  mutate(across("alp_pc", ~ round(.x, 1))) %>%
+  kable(booktabs = T, col.names = names(h_alp_pc_2225), 
+        align = "lcrrrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+         
 
 ```
 
+<br>
+
 
 ```{r}
 
-ggplot(alp_pc_2225, aes(x = StateAb, y = alp_pc, 
-                        shape = factor(Year))) +
+ggplot(h_alp_pc_2225, aes(x = StateAb, y = alp_pc, 
+                          shape = factor(Year))) +
   geom_point() +
   labs(x = "State", y = "Percentage of votes") +
-  scale_y_continuous(labels = label_comma()) +
   guides(shape = guide_legend(title = "Year")) +
   ggtitle("ALP: Percentage of first preference votes")
 
+
+```
+
+<br>
+
+```{r}
+
+## Check party names in 2022 and 2025
+
+hvotes2022 %>%
+  select(PartyAb:PartyNm) %>%
+  distinct(PartyAb, PartyNm, .keep_all = T) %>%
+  write_csv(., file = "party_names_22.csv")
+
+hvotes2025 %>%
+  select(PartyAb:PartyNm) %>%
+  distinct(PartyAb, PartyNm, .keep_all = T) %>%
+  write_csv(., file = "party_names_25.csv")
+
+```
+
+
+```{r include = F}
+
+hvotes2022 %>%
+  filter(PartyNm == "A.L.P.")
+
+```
+
+<br>
+
+## Percentage of first preference votes for the Greens - 2022 and 2025
+
+There are three separate figures for the Greens in the AEC voting figures: Australian Greens, Qld Greens and WA Greens. 
+
+```{r message = F}
+
+h_grn_n_22 <-
+  hvotes2022 %>%
+  filter(PartyAb == "GRN") %>%
+  group_by(StateAb) %>%
+  summarise(grn_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+h_grn_n_22 <-
+  full_join(h_grn_n_22, h_state_votes_22) %>%
+  write_csv(., file = "h_grn_n_22.csv")
+
+
+h_grn_n_25 <-
+  hvotes2025 %>%
+  filter(PartyAb == "GRN") %>%
+  group_by(StateAb) %>%
+  summarise(grn_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+h_grn_n_25 <-
+  full_join(h_grn_n_25, h_state_votes_25) %>%
+  write_csv(., file = "h_grn_n_25.csv")
+
+
+h_grn_n_2225 <-
+  bind_rows(h_grn_n_22, h_grn_n_25)
+
+```
+
+
+```{r message = F}
+
+h_grn_pc_2225 <- 
+  full_join(h_grn_n_2225, h_state_votes_2225) %>%
+  mutate(grn_pc = grn_votes / state_formal * 100) %>%
+  select(StateAb, Year, state_votes, state_informal, state_formal,
+         grn_votes, grn_pc) %>%
+  arrange(StateAb, Year)
+
+## "select" must go into code above so columns are in right order 
+##   for section below
+
+## Format the data to display a nice table
+
+h_grn_pc_2225 %>%
+  mutate(across(state_votes:grn_votes, ~ number(.x, big.mark = ","))) %>%
+  mutate(across("grn_pc", ~ round(.x, 1))) %>%
+  kable(booktabs = T, col.names = names(h_grn_pc_2225), 
+        align = "lcrrrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+         
+
+```
+
+<br>
+
+
+```{r}
+
+ggplot(h_grn_pc_2225, aes(x = StateAb, y = grn_pc, 
+                          shape = factor(Year))) +
+  geom_point() +
+  labs(x = "State", y = "Percentage of votes") +
+  scale_y_continuous(breaks = seq(10, 20, 2)) +
+  guides(shape = guide_legend(title = "Year")) +
+  ggtitle("Greens: Percentage of first preference votes")
 
 ```
 
