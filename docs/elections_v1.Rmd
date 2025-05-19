@@ -4,6 +4,7 @@ author: "Peter GS"
 date: "`r Sys.Date()`"
 output:
   html_document:
+    keep_md: yes
     toc: true
     toc_depth: 3
     toc_float: true
@@ -125,13 +126,15 @@ N_hvotes_25 <-
 
 ```{r}
 
-h_diff_N <- N_hvotes_25 - N_hvotes_22
+h_diff_N <- number(as.numeric(N_hvotes_25 - N_hvotes_22), big.mark = ",")
+
 
 ##diff_N
 
 ```
 
-There were `r h_diff_N` more voters in 2025 than in 2022.
+There were `r h_diff_N` more voters who voted for the House of 
+Reps in 2025 than in 2022.
 
 ```{r}
 
@@ -240,7 +243,9 @@ h_alp_pc_2225 %>%
 <br>
 
 
-```{r}
+```{r message = F}
+
+## Display plot
 
 ggplot(h_alp_pc_2225, aes(x = StateAb, y = alp_pc, 
                           shape = factor(Year))) +
@@ -250,6 +255,10 @@ ggplot(h_alp_pc_2225, aes(x = StateAb, y = alp_pc,
        subtitle = "AEC data at 2025-05-18", 
        x = "State", y = "Percentage of votes")
 
+
+## Save plot
+
+ggsave(file = "../figs/house_alp_first_pref.pdf", dev = "pdf")
 
 ```
 
@@ -345,7 +354,7 @@ h_grn_pc_2225 %>%
 <br>
 
 
-```{r}
+```{r message = F}
 
 ggplot(h_grn_pc_2225, aes(x = StateAb, y = grn_pc, 
                           shape = factor(Year))) +
@@ -355,6 +364,10 @@ ggplot(h_grn_pc_2225, aes(x = StateAb, y = grn_pc,
   labs(title = "House of Reps: Greens - Percentage of first preference votes", 
        subtitle = "AEC data at 2025-05-18",
        x = "State", y = "Percentage of votes")
+
+## Save plot
+
+ggsave(file = "../figs/house_grn_first_pref.pdf", dev = "pdf")
 
 
 ```
@@ -390,7 +403,7 @@ grn_n_div_2025 <-
 ```
 
 
-```{r eval = F}
+```{r eval = F, message = F}
 
 ggplot(grn_n_div_2025, aes(x = DivisionNm, y = TotalVotes)) +
   geom_point() +
@@ -398,6 +411,10 @@ ggplot(grn_n_div_2025, aes(x = DivisionNm, y = TotalVotes)) +
        subtitle = "AEC data at 2025-05-18",
        x = "Electorate", y = "No. of votes") +
   theme(axis.text.x = element_text(angle = 75))
+
+## Save plot
+
+ggsave(file = "../figs/house_grn_first_pref.pdf", dev = "pdf")
 
 ```
 
@@ -410,16 +427,20 @@ grn_n_div_2225 <- bind_rows(grn_n_div_2022, grn_n_div_2025) %>%
 ```
 
 
-```{r out.width = "120%"}
+```{r out.width = "120%", message = F}
 
 ggplot(grn_n_div_2225, aes(x = DivisionNm, y = TotalVotes,
                            shape = factor(Year))) +
   geom_point() +
   guides(shape = guide_legend(title = "Year")) +
-  labs(title = "House of Reps NSW: Greens votes - 2022 and 2025",
+  labs(title = "House of Reps NSW: Greens first preference votes - 2022 and 2025",
        subtitle = "AEC data at 2025-05-18",
        x = "Electorate", y = "No. of votes") +
   theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
+
+## Save plot
+
+ggsave(file = "../figs/house_grn_first_pref_electorates.pdf", dev = "pdf")
 
 ```
 
@@ -531,13 +552,13 @@ N_svotes_25 <-
 
 ```{r}
 
-s_diff_N <- N_svotes_25 - N_svotes_22
+s_diff_N <- number(as.numeric(N_svotes_25 - N_svotes_22), big.mark = ",")
 
 ##s_diff_N
 
 ```
 
-There were `r s_diff_N` more voters in 2025 than in 2022.
+There were `r s_diff_N` more people who lodged formal votes for the Senate in 2025 than in 2022.
 
 ```{r}
 
@@ -582,7 +603,7 @@ ggplot(s_state_votes_2225, aes(x = StateAb, y = state_votes,
   geom_jitter(width = 0.133) +
   scale_y_continuous(labels = label_comma()) +
   guides(shape = guide_legend(title = "Year")) +
-  labs(title = "Senate: Total no. of ballot papers received (formal & informal)", 
+  labs(title = "Senate: Total no. of formal votes", 
        subtitle = "AEC data at 2025-05-18",
        x = "State", y = "No. of formal votes")
          
@@ -651,7 +672,7 @@ s_alp_pc_2225 %>%
 <br>
 
 
-```{r}
+```{r message = F}
 
 ggplot(s_alp_pc_2225, aes(x = StateAb, y = alp_pc, 
                           shape = factor(Year))) +
@@ -661,6 +682,9 @@ ggplot(s_alp_pc_2225, aes(x = StateAb, y = alp_pc,
        subtitle = "AEC data at 2025-05-18",
        x = "State", y = "Percentage of votes")
 
+## Save plot
+
+ggsave(file = "../figs/senate_alp_first_pref.pdf", dev = "pdf")
 
 ```
 
@@ -694,7 +718,7 @@ svotes2022 %>%
 
 ## Senate: Percentage of first preference votes for the Greens - 2022 and 2025
 
-There are three separate figures for the Greens in the AEC voting figures: Australian Greens, Qld Greens and WA Greens. 
+The Greens go by different party names, depending on their state: Australian Greens, Qld Greens and WA Greens. All are identified by the same abbreviation, GRN, in the AEC data.
 
 ```{r message = F}
 
@@ -759,7 +783,7 @@ s_grn_pc_2225 %>%
 <br>
 
 
-```{r}
+```{r message = F}
 
 ggplot(s_grn_pc_2225, aes(x = StateAb, y = grn_pc, 
                           shape = factor(Year))) +
@@ -769,6 +793,10 @@ ggplot(s_grn_pc_2225, aes(x = StateAb, y = grn_pc,
   labs(title = "Senate: Greens - Percentage of first preference votes", 
        subtitle = "AEC data at 2025-05-18", 
        x = "State", y = "Percentage of votes")
+
+## Save plot
+
+ggsave(file = "../figs/senate_grn_first_pref.pdf", dev = "pdf")
 
 ```
 
