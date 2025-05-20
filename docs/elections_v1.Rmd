@@ -30,13 +30,62 @@ library(kableExtra)
 
 
 
+```{r eval = T}
+
+## Download data directly from AEC
+
+hvotes2022_web <- read_csv("https://results.aec.gov.au/27966/Website/Downloads/HouseFirstPrefsByCandidateByVoteTypeDownload-27966.csv", 
+                           skip = 1, show_col_types = FALSE)
+
+## Specify date of data!
+
+write_csv(hvotes2022_web, file = "hvotes2022_web_20250520.csv")
+
+
+
+hvotes2025_web <- read_csv("https://tallyroom.aec.gov.au/Downloads/HouseFirstPrefsByCandidateByVoteTypeDownload-31496.csv", 
+                           skip = 1, show_col_types = FALSE)
+
+## Specify date of data!
+
+write_csv(hvotes2025_web, file = "hvotes2025_web_20250520.csv")
+
+```
+
+
+
+```{r eval = F}
+
+## Load local data
+
+hvotes2022_local <- read_csv("../data/hvotes2022_web_20250520.csv", skip = 0)
+
+hvotes2025_local <- read_csv("../data/hvotes2025_web_20250520.csv", skip = 0)
+
+```
+
+
 ```{r}
 
-## Load data
+## Pick the data set to use!!
 
-hvotes2022 <- read_csv("../data/House1stPrefsByCandidateByVoteType2022-27966-20250517.csv", skip = 1, show_col_types = FALSE)
+hvotes2022 <- hvotes2022_web
 
-hvotes2025 <- read_csv("../data/House1stPrefsByCandidateByVoteType2025-31496-20250517.csv", skip = 1, show_col_types = FALSE)
+#hvotes2022 <- hvotes2022_local
+
+
+hvotes2025 <- hvotes2025_web
+
+#hvotes2025 <- hvotes2025_local
+
+```
+
+
+```{r}
+
+## Set date of data for titles in plots
+
+date_data <- Sys.Date()
 
 ```
 
@@ -168,6 +217,8 @@ h_state_votes_2225 %>%
 ```
 <br>
 
+
+
 ```{r}
 
 ggplot(h_state_votes_2225, aes(x = StateAb, y = state_votes, 
@@ -177,7 +228,8 @@ ggplot(h_state_votes_2225, aes(x = StateAb, y = state_votes,
   scale_y_continuous(labels = label_comma()) +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "House of Reps: Total no. of ballot papers received (formal & informal)", 
-       subtitle = "AEC data at 2025-05-18", 
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "),
        x = "State", y = "No. of votes") 
          
 ```
@@ -252,7 +304,8 @@ ggplot(h_alp_pc_2225, aes(x = StateAb, y = alp_pc,
   geom_point() +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "House of Reps: ALP - Percentage of first preference votes", 
-       subtitle = "AEC data at 2025-05-18", 
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "State", y = "Percentage of votes")
 
 
@@ -362,7 +415,8 @@ ggplot(h_grn_pc_2225, aes(x = StateAb, y = grn_pc,
   scale_y_continuous(breaks = seq(10, 20, 2)) +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "House of Reps: Greens - Percentage of first preference votes", 
-       subtitle = "AEC data at 2025-05-18",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "State", y = "Percentage of votes")
 
 ## Save plot
@@ -376,65 +430,105 @@ ggsave(file = "../figs/house_grn_first_pref.pdf", dev = "pdf")
 
 ## House of Reps NSW: Greens votes in 2022 and 2025
 
+
 ```{r}
 
-grn_n_div_2022 <-
+## Green votes in NSW - 2022
+
+N_h_nsw_div_2022 <-
+  hvotes2022 %>%
+  filter(StateAb == "NSW") %>%
+  filter(!Surname == "Informal") %>%  ## Don't use PartyNm!
+  filter(!DivisionNm == "North Sydney") %>%group_by(DivisionNm) %>%
+  summarise(TotalVotesDIV = sum(TotalVotes))
+
+
+grn_h_n_nsw_div_2022a <-
   hvotes2022 %>%
   filter(StateAb == "NSW") %>%
   filter(PartyAb == "GRN") %>%
   select(StateAb, PartyAb, DivisionNm, TotalVotes) %>%
-  mutate(Year = "2022") %>%
-  write_csv(., file = "grn_n_div_2022.csv")
+  rename(TotalVotesGRN = TotalVotes) %>%
+  mutate(Year = "2022") 
+
+
+grn_h_n_nsw_div_2022 <-
+  inner_join(N_h_nsw_div_2022, grn_h_n_nsw_div_2022a, by = "DivisionNm") %>%
+  mutate(grn_pc = TotalVotesGRN / TotalVotesDIV * 100) %>%
+  select(StateAb, Year, PartyAb, DivisionNm, TotalVotesGRN, TotalVotesDIV,
+         grn_pc) %>%
+  write_csv(., file = "grn_h_n_nsw_div_2022.csv")
+
 
 ```
 
 
-
 ```{r}
 
-grn_n_div_2025 <-
+## Green votes in NSW - 2025
+
+N_h_nsw_div_2025 <-
+  hvotes2025 %>%
+  filter(StateAb == "NSW") %>%
+  filter(!Surname == "Informal") %>% ## Don't use PartyNm!
+  group_by(DivisionNm) %>%
+  summarise(TotalVotesDIV = sum(TotalVotes))
+
+
+grn_h_n_nsw_div_2025a <-
   hvotes2025 %>%
   filter(StateAb == "NSW") %>%
   filter(PartyAb == "GRN") %>%
   select(StateAb, PartyAb, DivisionNm, TotalVotes) %>%
-  mutate(Year = "2025") %>%
-  write_csv(., file = "grn_n_div_2025.csv")
+  rename(TotalVotesGRN = TotalVotes) %>%
+  mutate(Year = "2025") 
+
+
+grn_h_n_nsw_div_2025 <-
+  inner_join(N_h_nsw_div_2025, grn_h_n_nsw_div_2025a, by = "DivisionNm") %>%
+  mutate(grn_pc = TotalVotesGRN / TotalVotesDIV * 100) %>%
+  select(StateAb, Year, PartyAb, DivisionNm, TotalVotesGRN, TotalVotesDIV,
+         grn_pc) %>%
+  write_csv(., file = "grn_h_n_nsw_div_2025.csv")
 
 ```
 
 
-```{r eval = F, message = F}
+```{r message = F}
 
-ggplot(grn_n_div_2025, aes(x = DivisionNm, y = TotalVotes)) +
-  geom_point() +
-  labs(title = "House of Reps NSW: Greens votes - 2025",
-       subtitle = "AEC data at 2025-05-18",
-       x = "Electorate", y = "No. of votes") +
-  theme(axis.text.x = element_text(angle = 75))
+## Consolidated Greens votes in NSW - 2022 and 2025
 
-## Save plot
+grn_h_n_nsw_div_2225 <-
+  full_join(grn_h_n_nsw_div_2022, grn_h_n_nsw_div_2025) %>%
+  arrange(DivisionNm, Year) %>%
+  write_csv(., file = "grn_h_n_nsw_div_2225.csv")
 
-ggsave(file = "../figs/house_grn_first_pref.pdf", dev = "pdf")
+
+## Format data to display in a nice table
+
+grn_h_n_nsw_div_2225 %>%
+  mutate(across(TotalVotesGRN:TotalVotesDIV, ~ number(.x, big.mark = ","))) %>%
+  mutate(across("grn_pc", ~ round(.x, 1))) %>%
+  kable(booktabs = T, col.names = names(grn_h_n_nsw_div_2225), 
+        align = "lcclrrr") %>%
+  #row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  row_spec(c(seq(3, 91, 4), seq(4, 92, 4)), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+
 
 ```
 
-
-```{r}
-
-grn_n_div_2225 <- bind_rows(grn_n_div_2022, grn_n_div_2025) %>%
-  write_csv(., file = "grn_n_div_2225.csv")
-
-```
-
+<br>
 
 ```{r out.width = "120%", message = F}
 
-ggplot(grn_n_div_2225, aes(x = DivisionNm, y = TotalVotes,
-                           shape = factor(Year))) +
+ggplot(grn_h_n_nsw_div_2225, aes(x = DivisionNm, y = TotalVotesGRN, 
+                                 shape = factor(Year))) +
   geom_point() +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "House of Reps NSW: Greens first preference votes - 2022 and 2025",
-       subtitle = "AEC data at 2025-05-18",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "Electorate", y = "No. of votes") +
   theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
 
@@ -444,6 +538,28 @@ ggsave(file = "../figs/house_grn_first_pref_electorates.pdf", dev = "pdf")
 
 ```
 
+<br>
+
+
+```{r out.width = "120%", message = F}
+
+ggplot(grn_h_n_nsw_div_2225, aes(x = DivisionNm, y = grn_pc, 
+                                 shape = factor(Year))) +
+  geom_point() +
+  guides(shape = guide_legend(title = "Year")) +
+  labs(title = "House of Reps NSW: Greens percent. first preference votes - 2022 and 2025",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
+       x = "Electorate", y = "Percentage of votes in electorate") +
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
+
+## Save plot
+
+ggsave(file = "../figs/house_grn_first_pref_pc_electorates.pdf", dev = "pdf")
+
+```
+
+
 
 <br>
 <br>
@@ -452,13 +568,54 @@ ggsave(file = "../figs/house_grn_first_pref_electorates.pdf", dev = "pdf")
 
 ```{r}
 
-## Load data
+## Download data directly from AEC
 
-svotes2022 <- read_csv("../data/Senate1stPrefsByStateByGroupByVoteType2022-27966-20250518.csv", skip = 1, show_col_types = FALSE)
+svotes2022_web <- read_csv("https://results.aec.gov.au/27966/Website/Downloads/SenateFirstPrefsByStateByGroupByVoteTypeDownload-27966.csv", 
+                           skip = 1, show_col_types = FALSE)
 
-svotes2025 <- read_csv("../data/Senate1stPrefsByStateByGroupByVoteType2025-31496-20250518.csv", skip = 1, show_col_types = FALSE)
+## Specify date of data!
+
+write_csv(svotes2022_web, file = "../data/svotes2022_web_20250520.csv")
+
+
+svotes2025_web <- read_csv("https://tallyroom.aec.gov.au/Downloads/SenateFirstPrefsByStateByGroupByVoteTypeDownload-31496.csv", 
+                           skip = 1, show_col_types = FALSE)
+
+## Specify date of data!
+
+write_csv(svotes2025_web, file = "../data/svotes2025_web_20250520.csv")
 
 ```
+
+
+
+```{r eval = F}
+
+## Load local data
+
+svotes2022_local <- read_csv("../data/svotes2022_web_20250520.csv", skip = 0)
+
+svotes2025_local <- read_csv("../data/svotes2025_web_20250520.csv", skip = 0)
+
+```
+
+
+```{r}
+
+## Pick the data set to use!!
+
+svotes2022 <- svotes2022_web
+
+#svotes2022 <- svotes2022_local
+
+
+svotes2025 <- svotes2025_web
+
+#svotes2025 <- svotes2025_local
+
+
+```
+
 
 <br>
 
@@ -604,7 +761,8 @@ ggplot(s_state_votes_2225, aes(x = StateAb, y = state_votes,
   scale_y_continuous(labels = label_comma()) +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "Senate: Total no. of formal votes", 
-       subtitle = "AEC data at 2025-05-18",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "State", y = "No. of formal votes")
          
 ```
@@ -679,7 +837,8 @@ ggplot(s_alp_pc_2225, aes(x = StateAb, y = alp_pc,
   geom_point() +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "Senate: ALP - Percentage of first preference votes", 
-       subtitle = "AEC data at 2025-05-18",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "State", y = "Percentage of votes")
 
 ## Save plot
@@ -791,7 +950,8 @@ ggplot(s_grn_pc_2225, aes(x = StateAb, y = grn_pc,
   scale_y_continuous(breaks = seq(10, 20, 2)) +
   guides(shape = guide_legend(title = "Year")) +
   labs(title = "Senate: Greens - Percentage of first preference votes", 
-       subtitle = "AEC data at 2025-05-18", 
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "State", y = "Percentage of votes")
 
 ## Save plot
