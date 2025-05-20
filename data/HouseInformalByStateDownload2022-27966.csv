@@ -1,0 +1,10 @@
+2022 Federal Election House of Representatives Informal Votes By State [Event:27966 Phase:FinalResults Generated:2022-07-19T10:29:59 Cycle:06578790-03c6-4cf4-b786-103cfb915abd Created:2022-07-19T10:24:10 Environment:PROD Site:CANBERRA Server:TALLYROOM Version:10.9.9.0]
+StateAb,StateNm,FormalVotes,InformalVotes,TotalVotes,InformalPercent,InformalSwing
+NSW,New South Wales,4650940,308644,4959584,6.22,-0.79
+VIC,Victoria,3746433,185174,3931607,4.71,0.05
+QLD,Queensland,2958026,128732,3086758,4.17,-0.78
+WA,Western Australia,1473225,86057,1559282,5.52,0.08
+SA,South Australia,1097786,59222,1157008,5.12,0.31
+TAS,Tasmania,349698,21734,371432,5.85,1.46
+ACT,Australian Capital Territory,281997,7116,289113,2.46,-1.03
+NT,Northern Territory,100937,5658,106595,5.31,0.62

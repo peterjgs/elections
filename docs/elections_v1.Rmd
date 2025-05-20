@@ -37,18 +37,23 @@ library(kableExtra)
 hvotes2022_web <- read_csv("https://results.aec.gov.au/27966/Website/Downloads/HouseFirstPrefsByCandidateByVoteTypeDownload-27966.csv", 
                            skip = 1, show_col_types = FALSE)
 
-## Specify date of data!
+## Save data file
 
-write_csv(hvotes2022_web, file = "../data/hvotes2022_web_20250520.csv")
+f_name1 <- paste0("../data/hvotes2022_web_", Sys.Date(), ".csv")
+
+write_csv(hvotes2022_web, file = f_name1)
 
 
 
 hvotes2025_web <- read_csv("https://tallyroom.aec.gov.au/Downloads/HouseFirstPrefsByCandidateByVoteTypeDownload-31496.csv", 
                            skip = 1, show_col_types = FALSE)
 
-## Specify date of data!
+## Save data file
 
-write_csv(hvotes2025_web, file = "../data/hvotes2025_web_20250520.csv")
+f_name2 <- paste0("../data/hvotes2025_web_", Sys.Date(), ".csv")
+
+write_csv(hvotes2025_web, file = f_name2)
+
 
 ```
 
@@ -573,17 +578,23 @@ ggsave(file = "../figs/house_grn_first_pref_pc_electorates.pdf", dev = "pdf")
 svotes2022_web <- read_csv("https://results.aec.gov.au/27966/Website/Downloads/SenateFirstPrefsByStateByGroupByVoteTypeDownload-27966.csv", 
                            skip = 1, show_col_types = FALSE)
 
-## Specify date of data!
+## Save data file
 
-write_csv(svotes2022_web, file = "../data/svotes2022_web_20250520.csv")
+f_name3 <- paste0("../data/svotes2022_web_", Sys.Date(), ".csv")
+
+write_csv(svotes2022_web, file = f_name3)
+
 
 
 svotes2025_web <- read_csv("https://tallyroom.aec.gov.au/Downloads/SenateFirstPrefsByStateByGroupByVoteTypeDownload-31496.csv", 
                            skip = 1, show_col_types = FALSE)
 
-## Specify date of data!
+## Save data file
 
-write_csv(svotes2025_web, file = "../data/svotes2025_web_20250520.csv")
+f_name4 <- paste0("../data/svotes2025_web_", Sys.Date(), ".csv")
+
+write_csv(svotes2025_web, file = f_name4)
+
 
 ```
 
