@@ -39,7 +39,7 @@ hvotes2022_web <- read_csv("https://results.aec.gov.au/27966/Website/Downloads/H
 
 ## Specify date of data!
 
-write_csv(hvotes2022_web, file = "hvotes2022_web_20250520.csv")
+write_csv(hvotes2022_web, file = "../data/hvotes2022_web_20250520.csv")
 
 
 
@@ -48,7 +48,7 @@ hvotes2025_web <- read_csv("https://tallyroom.aec.gov.au/Downloads/HouseFirstPre
 
 ## Specify date of data!
 
-write_csv(hvotes2025_web, file = "hvotes2025_web_20250520.csv")
+write_csv(hvotes2025_web, file = "../data/hvotes2025_web_20250520.csv")
 
 ```
 
