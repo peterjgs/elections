@@ -535,7 +535,7 @@ ggplot(grn_h_n_nsw_div_2225, aes(x = DivisionNm, y = TotalVotesGRN,
        #subtitle = "AEC data at 2025-05-18",
        subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "Electorate", y = "No. of votes") +
-  theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
 
 ## Save plot
 
@@ -556,7 +556,7 @@ ggplot(grn_h_n_nsw_div_2225, aes(x = DivisionNm, y = grn_pc,
        #subtitle = "AEC data at 2025-05-18",
        subtitle = paste("AEC data at", date_data, sep = " "), 
        x = "Electorate", y = "Percentage of votes in electorate") +
-  theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
 
 ## Save plot
 
@@ -564,7 +564,108 @@ ggsave(file = "../figs/house_grn_first_pref_pc_electorates.pdf", dev = "pdf")
 
 ```
 
+<br>
 
+## House of Reps NSW: First preference by polling place
+
+```{r}
+
+hvotes2025_poll_place <- read_csv("https://tallyroom.aec.gov.au/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-31496-NSW.csv", skip = 1, show_col_types = F)
+
+## Save data file
+
+f_name5 <- paste0("../data/hvotes2025_poll_place_", Sys.Date(), ".csv")
+
+write_csv(hvotes2025_poll_place, file = f_name5)
+
+  
+```
+
+
+```{r}
+
+hvotes2025_elect_macq_grn <-
+  hvotes2025_poll_place %>%
+  filter(Surname != "Informal") %>%
+  filter(DivisionNm == "Macquarie") %>%
+  group_by(PollingPlace) %>%
+  mutate(TotalPollPlaceVotes = sum(OrdinaryVotes)) %>%
+  mutate(party_pc = OrdinaryVotes / sum(OrdinaryVotes) * 100)  %>% 
+  filter(PartyAb == "GRN")
+
+write_csv(hvotes2025_elect_macq_grn, file = "hvotes2025_macq_grn.csv")
+
+```
+
+
+```{r}
+
+## Shorten long polling place names
+
+hvotes2025_elect_macq_grn <-
+  hvotes2025_elect_macq_grn %>%
+  mutate(PollingPlace2 = str_replace(PollingPlace, "Macquarie", "")) %>%
+  mutate(PollingPlace2 = str_replace(PollingPlace2, "MACQUARIE", "")) %>%
+  mutate(PollingPlace2 = str_replace(PollingPlace2, "\\(\\)", "")) %>%
+  mutate(PollingPlace2 = str_replace(PollingPlace2, 
+                                     "Special Hospital Team 1",
+                                     "Spec. Hospital 1")) %>% 
+  mutate(PollingPlace2 = str_replace(PollingPlace2, 
+                                     "Special Hospital Team 2",
+                                     "Spec. Hospital 2"))
+
+
+```
+
+
+```{r out.width = "120%", message = F}
+
+#hvotes2025_elect_grn_pc$PollingPlace[1:31]
+
+ggplot(hvotes2025_elect_macq_grn, aes(x = PollingPlace2, y = party_pc)) +
+  #geom_point(aes(colour = TotalPollPlaceVotes < 200)) +
+  geom_point() +
+  #guides(shape = guide_legend(title = "Year")) +
+  labs(title = "House of Reps Macquarie: Greens percent. first prefs. by polling place - 2025",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
+       x = "Polling Place", y = "Percentage of votes at polling place") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+
+## Save plot
+
+ggsave(file = "../figs/house_grn_first_pref_pc_macquarie_1.pdf", dev = "pdf")
+
+
+```
+
+
+```{r out.width = "120%", message = F}
+
+#hvotes2025_elect_grn_pc$PollingPlace[1:31]
+
+
+poll_place_plot_data <- 
+  hvotes2025_elect_grn_pc %>%
+  slice(., 32:63)
+
+ggplot(poll_place_plot_data, aes(x = PollingPlace, y = grn_pc)) +
+  geom_point() +
+  #guides(shape = guide_legend(title = "Year")) +
+  labs(title = "House of Reps Macquarie: Greens percent. first pref. votes - 2025",
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
+       x = "Polling Place", y = "Percentage of votes in electorate") +
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
+
+## Save plot
+
+ggsave(file = "../figs/house_grn_first_pref_pc_macquarie_2.pdf", dev = "pdf")
+
+
+
+
+```
 
 <br>
 <br>
