@@ -25,6 +25,7 @@ knitr::opts_chunk$set(echo = F)
 library(tidyverse)
 library(scales)  ## For number format on plot axes
 library(kableExtra)
+library(ggrepel)  ## For labelling data point
 
 ```
 
@@ -625,45 +626,28 @@ hvotes2025_elect_macq_grn <-
 ggplot(hvotes2025_elect_macq_grn, aes(x = PollingPlace2, y = party_pc)) +
   #geom_point(aes(colour = TotalPollPlaceVotes < 200)) +
   geom_point() +
-  #guides(shape = guide_legend(title = "Year")) +
+  #geom_text(aes(label = OrdinaryVotes), size = 2, nudge_y = -1.25) +
+  ggrepel::geom_text_repel(aes(label = OrdinaryVotes), size = 2,
+                           box.padding = 0.1) +
   labs(title = "House of Reps Macquarie: Greens percent. first prefs. by polling place - 2025",
        #subtitle = "AEC data at 2025-05-18",
-       subtitle = paste("AEC data at", date_data, sep = " "), 
+       subtitle = paste("Vote numbers shown near data point. ", "AEC data at", date_data, sep = " "), 
        x = "Polling Place", y = "Percentage of votes at polling place") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
 
 ## Save plot
 
-ggsave(file = "../figs/house_grn_first_pref_pc_macquarie_1.pdf", dev = "pdf")
+ggsave(file = "../figs/house_grn_first_pref_pc_macquarie.pdf", dev = "pdf")
 
 
 ```
 
 
-```{r out.width = "120%", message = F}
+```{r eval = F}
 
-#hvotes2025_elect_grn_pc$PollingPlace[1:31]
-
-
-poll_place_plot_data <- 
-  hvotes2025_elect_grn_pc %>%
-  slice(., 32:63)
-
-ggplot(poll_place_plot_data, aes(x = PollingPlace, y = grn_pc)) +
-  geom_point() +
-  #guides(shape = guide_legend(title = "Year")) +
-  labs(title = "House of Reps Macquarie: Greens percent. first pref. votes - 2025",
-       #subtitle = "AEC data at 2025-05-18",
-       subtitle = paste("AEC data at", date_data, sep = " "), 
-       x = "Polling Place", y = "Percentage of votes in electorate") +
-  theme(axis.text.x = element_text(angle = 75, vjust = 0.5))
-
-## Save plot
-
-ggsave(file = "../figs/house_grn_first_pref_pc_macquarie_2.pdf", dev = "pdf")
-
-
-
+hvotes2025_elect_macq_grn %>%
+  filter(grepl("Springwood", PollingPlace)) %>%
+  select(PollingPlace, OrdinaryVotes)
 
 ```
 
