@@ -1,7 +1,7 @@
 ---
 title: "Federal elections - 2022 and 2025"
 author: "Peter GS"
-date: "2025-05-24"
+date: "2025-05-31"
 output:
   html_document:
     keep_md: yes
@@ -98,11 +98,11 @@ output:
 <tbody>
   <tr>
    <td style="text-align:left;"> ACT </td>
-   <td style="text-align:right;"> 7254 </td>
+   <td style="text-align:right;"> 7231 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NSW </td>
-   <td style="text-align:right;"> 419084 </td>
+   <td style="text-align:right;"> 419974 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NT </td>
@@ -110,23 +110,23 @@ output:
   </tr>
   <tr>
    <td style="text-align:left;"> QLD </td>
-   <td style="text-align:right;"> 163191 </td>
+   <td style="text-align:right;"> 163467 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SA </td>
-   <td style="text-align:right;"> 62789 </td>
+   <td style="text-align:right;"> 62907 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> TAS </td>
-   <td style="text-align:right;"> 16287 </td>
+   <td style="text-align:right;"> 16316 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> VIC </td>
-   <td style="text-align:right;"> 179078 </td>
+   <td style="text-align:right;"> 179444 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> WA </td>
-   <td style="text-align:right;"> 65644 </td>
+   <td style="text-align:right;"> 65745 </td>
   </tr>
 </tbody>
 </table>
@@ -140,7 +140,7 @@ output:
 
 
 
-There were 949,095 more voters who voted for the House of 
+There were 948,362 more voters who voted for the House of 
 Reps in 2025 than in 2022.
 
 
@@ -170,9 +170,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;"> ACT </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 297,785 </td>
-   <td style="text-align:right;"> 7,254 </td>
-   <td style="text-align:right;"> 290,531 </td>
+   <td style="text-align:right;"> 297,796 </td>
+   <td style="text-align:right;"> 7,231 </td>
+   <td style="text-align:right;"> 290,565 </td>
   </tr>
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
@@ -184,9 +184,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,214,032 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 419,084 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,794,948 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,213,251 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 419,974 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,793,277 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NT </td>
@@ -212,9 +212,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,313,136 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 163,191 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,149,945 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,313,112 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 163,467 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,149,645 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SA </td>
@@ -226,9 +226,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;"> SA </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 1,195,123 </td>
-   <td style="text-align:right;"> 62,789 </td>
-   <td style="text-align:right;"> 1,132,334 </td>
+   <td style="text-align:right;"> 1,195,145 </td>
+   <td style="text-align:right;"> 62,907 </td>
+   <td style="text-align:right;"> 1,132,238 </td>
   </tr>
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
@@ -240,9 +240,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 383,574 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,287 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 367,287 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 383,575 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,316 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 367,259 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> VIC </td>
@@ -254,9 +254,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;"> VIC </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 4,232,494 </td>
-   <td style="text-align:right;"> 179,078 </td>
-   <td style="text-align:right;"> 4,053,416 </td>
+   <td style="text-align:right;"> 4,232,502 </td>
+   <td style="text-align:right;"> 179,444 </td>
+   <td style="text-align:right;"> 4,053,058 </td>
   </tr>
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
@@ -268,9 +268,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,664,171 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 65,644 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,598,527 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,664,201 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 65,745 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,598,456 </td>
   </tr>
 </tbody>
 </table>
@@ -312,10 +312,10 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;"> ACT </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 297,785 </td>
-   <td style="text-align:right;"> 7,254 </td>
-   <td style="text-align:right;"> 290,531 </td>
-   <td style="text-align:right;"> 138,091 </td>
+   <td style="text-align:right;"> 297,796 </td>
+   <td style="text-align:right;"> 7,231 </td>
+   <td style="text-align:right;"> 290,565 </td>
+   <td style="text-align:right;"> 138,110 </td>
    <td style="text-align:right;"> 47.5 </td>
   </tr>
   <tr>
@@ -330,10 +330,10 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,214,032 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 419,084 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,794,948 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,687,440 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,213,251 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 419,974 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,793,277 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,687,002 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 35.2 </td>
   </tr>
   <tr>
@@ -366,10 +366,10 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,313,136 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 163,191 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,149,945 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 975,898 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,313,112 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 163,467 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,149,645 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 975,848 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 31.0 </td>
   </tr>
   <tr>
@@ -384,10 +384,10 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;"> SA </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 1,195,123 </td>
-   <td style="text-align:right;"> 62,789 </td>
-   <td style="text-align:right;"> 1,132,334 </td>
-   <td style="text-align:right;"> 433,764 </td>
+   <td style="text-align:right;"> 1,195,145 </td>
+   <td style="text-align:right;"> 62,907 </td>
+   <td style="text-align:right;"> 1,132,238 </td>
+   <td style="text-align:right;"> 433,738 </td>
    <td style="text-align:right;"> 38.3 </td>
   </tr>
   <tr>
@@ -402,9 +402,9 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 383,574 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,287 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 367,287 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 383,575 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,316 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 367,259 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 134,435 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 36.6 </td>
   </tr>
@@ -420,10 +420,10 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;"> VIC </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 4,232,494 </td>
-   <td style="text-align:right;"> 179,078 </td>
-   <td style="text-align:right;"> 4,053,416 </td>
-   <td style="text-align:right;"> 1,375,912 </td>
+   <td style="text-align:right;"> 4,232,502 </td>
+   <td style="text-align:right;"> 179,444 </td>
+   <td style="text-align:right;"> 4,053,058 </td>
+   <td style="text-align:right;"> 1,375,993 </td>
    <td style="text-align:right;"> 33.9 </td>
   </tr>
   <tr>
@@ -438,10 +438,10 @@ Reps in 2025 than in 2022.
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,664,171 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 65,644 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,598,527 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 568,885 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,664,201 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 65,745 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,598,456 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 568,895 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 35.6 </td>
   </tr>
 </tbody>
@@ -493,9 +493,9 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;"> ACT </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 297,785 </td>
-   <td style="text-align:right;"> 7,254 </td>
-   <td style="text-align:right;"> 290,531 </td>
+   <td style="text-align:right;"> 297,796 </td>
+   <td style="text-align:right;"> 7,231 </td>
+   <td style="text-align:right;"> 290,565 </td>
    <td style="text-align:right;"> 43,753 </td>
    <td style="text-align:right;"> 15.1 </td>
   </tr>
@@ -511,10 +511,10 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,214,032 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 419,084 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,794,948 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 530,559 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,213,251 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 419,974 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,793,277 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 530,310 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11.1 </td>
   </tr>
   <tr>
@@ -547,10 +547,10 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,313,136 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 163,191 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,149,945 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 370,340 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,313,112 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 163,467 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,149,645 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 370,313 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11.8 </td>
   </tr>
   <tr>
@@ -565,10 +565,10 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;"> SA </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 1,195,123 </td>
-   <td style="text-align:right;"> 62,789 </td>
-   <td style="text-align:right;"> 1,132,334 </td>
-   <td style="text-align:right;"> 151,936 </td>
+   <td style="text-align:right;"> 1,195,145 </td>
+   <td style="text-align:right;"> 62,907 </td>
+   <td style="text-align:right;"> 1,132,238 </td>
+   <td style="text-align:right;"> 151,915 </td>
    <td style="text-align:right;"> 13.4 </td>
   </tr>
   <tr>
@@ -583,10 +583,10 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 383,574 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,287 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 367,287 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 40,853 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 383,575 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,316 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 367,259 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 40,833 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11.1 </td>
   </tr>
   <tr>
@@ -601,10 +601,10 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;"> VIC </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 4,232,494 </td>
-   <td style="text-align:right;"> 179,078 </td>
-   <td style="text-align:right;"> 4,053,416 </td>
-   <td style="text-align:right;"> 550,749 </td>
+   <td style="text-align:right;"> 4,232,502 </td>
+   <td style="text-align:right;"> 179,444 </td>
+   <td style="text-align:right;"> 4,053,058 </td>
+   <td style="text-align:right;"> 550,659 </td>
    <td style="text-align:right;"> 13.6 </td>
   </tr>
   <tr>
@@ -619,10 +619,10 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,664,171 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 65,644 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,598,527 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 191,409 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,664,201 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 65,745 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,598,456 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 191,389 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 12.0 </td>
   </tr>
 </tbody>
@@ -671,8 +671,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Banks </td>
-   <td style="text-align:right;"> 11,755 </td>
-   <td style="text-align:right;"> 98,934 </td>
+   <td style="text-align:right;"> 11,756 </td>
+   <td style="text-align:right;"> 98,935 </td>
    <td style="text-align:right;"> 11.9 </td>
   </tr>
   <tr>
@@ -707,7 +707,7 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Bennelong </td>
-   <td style="text-align:right;"> 12,932 </td>
+   <td style="text-align:right;"> 12,931 </td>
    <td style="text-align:right;"> 109,812 </td>
    <td style="text-align:right;"> 11.8 </td>
   </tr>
@@ -761,8 +761,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Bradfield </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7,559 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 112,374 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7,554 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 112,230 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6.7 </td>
   </tr>
   <tr>
@@ -779,8 +779,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Calare </td>
-   <td style="text-align:right;"> 3,755 </td>
-   <td style="text-align:right;"> 106,272 </td>
+   <td style="text-align:right;"> 3,753 </td>
+   <td style="text-align:right;"> 106,267 </td>
    <td style="text-align:right;"> 3.5 </td>
   </tr>
   <tr>
@@ -797,8 +797,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Chifley </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 8,722 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 89,413 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 8,724 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 89,414 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 9.8 </td>
   </tr>
   <tr>
@@ -833,8 +833,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Cowper </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,568 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 107,762 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,552 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 107,735 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4.2 </td>
   </tr>
   <tr>
@@ -870,7 +870,7 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Dobell </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 10,647 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 103,440 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 103,427 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 10.3 </td>
   </tr>
   <tr>
@@ -887,8 +887,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Eden-Monaro </td>
-   <td style="text-align:right;"> 10,737 </td>
-   <td style="text-align:right;"> 107,090 </td>
+   <td style="text-align:right;"> 10,739 </td>
+   <td style="text-align:right;"> 107,088 </td>
    <td style="text-align:right;"> 10.0 </td>
   </tr>
   <tr>
@@ -905,8 +905,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Farrer </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,084 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 103,057 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5,085 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 103,063 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4.9 </td>
   </tr>
   <tr>
@@ -923,8 +923,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Fowler </td>
-   <td style="text-align:right;"> 6,292 </td>
-   <td style="text-align:right;"> 92,952 </td>
+   <td style="text-align:right;"> 6,288 </td>
+   <td style="text-align:right;"> 92,938 </td>
    <td style="text-align:right;"> 6.8 </td>
   </tr>
   <tr>
@@ -942,7 +942,7 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Gilmore </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7,932 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 111,058 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 111,053 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7.1 </td>
   </tr>
   <tr>
@@ -977,8 +977,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Greenway </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11,017 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 102,756 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11,018 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 102,755 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 10.7 </td>
   </tr>
   <tr>
@@ -995,8 +995,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Hughes </td>
-   <td style="text-align:right;"> 11,226 </td>
-   <td style="text-align:right;"> 98,340 </td>
+   <td style="text-align:right;"> 11,221 </td>
+   <td style="text-align:right;"> 98,295 </td>
    <td style="text-align:right;"> 11.4 </td>
   </tr>
   <tr>
@@ -1013,8 +1013,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Hume </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 8,451 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 99,476 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 8,455 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 99,467 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 8.5 </td>
   </tr>
   <tr>
@@ -1067,8 +1067,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Lindsay </td>
-   <td style="text-align:right;"> 9,421 </td>
-   <td style="text-align:right;"> 98,163 </td>
+   <td style="text-align:right;"> 9,416 </td>
+   <td style="text-align:right;"> 98,146 </td>
    <td style="text-align:right;"> 9.6 </td>
   </tr>
   <tr>
@@ -1085,8 +1085,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Lyne </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6,972 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 109,387 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6,977 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 109,350 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6.4 </td>
   </tr>
   <tr>
@@ -1103,8 +1103,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Macarthur </td>
-   <td style="text-align:right;"> 12,040 </td>
-   <td style="text-align:right;"> 93,791 </td>
+   <td style="text-align:right;"> 12,012 </td>
+   <td style="text-align:right;"> 93,536 </td>
    <td style="text-align:right;"> 12.8 </td>
   </tr>
   <tr>
@@ -1121,8 +1121,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Mackellar </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6,859 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 111,798 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6,858 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 111,847 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6.1 </td>
   </tr>
   <tr>
@@ -1139,8 +1139,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Macquarie </td>
-   <td style="text-align:right;"> 13,668 </td>
-   <td style="text-align:right;"> 109,702 </td>
+   <td style="text-align:right;"> 13,666 </td>
+   <td style="text-align:right;"> 109,705 </td>
    <td style="text-align:right;"> 12.5 </td>
   </tr>
   <tr>
@@ -1194,7 +1194,7 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> New England </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 9,023 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 114,347 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 114,346 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7.9 </td>
   </tr>
   <tr>
@@ -1211,8 +1211,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Newcastle </td>
-   <td style="text-align:right;"> 24,053 </td>
-   <td style="text-align:right;"> 108,342 </td>
+   <td style="text-align:right;"> 24,061 </td>
+   <td style="text-align:right;"> 108,266 </td>
    <td style="text-align:right;"> 22.2 </td>
   </tr>
   <tr>
@@ -1229,8 +1229,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Page </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,299 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 107,631 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16,265 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 107,594 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 15.1 </td>
   </tr>
   <tr>
@@ -1247,8 +1247,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Parkes </td>
-   <td style="text-align:right;"> 6,400 </td>
-   <td style="text-align:right;"> 104,905 </td>
+   <td style="text-align:right;"> 6,404 </td>
+   <td style="text-align:right;"> 104,886 </td>
    <td style="text-align:right;"> 6.1 </td>
   </tr>
   <tr>
@@ -1265,8 +1265,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Parramatta </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11,882 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 98,044 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11,766 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 97,190 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 12.1 </td>
   </tr>
   <tr>
@@ -1283,8 +1283,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Paterson </td>
-   <td style="text-align:right;"> 8,215 </td>
-   <td style="text-align:right;"> 108,681 </td>
+   <td style="text-align:right;"> 8,219 </td>
+   <td style="text-align:right;"> 108,704 </td>
    <td style="text-align:right;"> 7.6 </td>
   </tr>
   <tr>
@@ -1319,8 +1319,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Richmond </td>
-   <td style="text-align:right;"> 27,790 </td>
-   <td style="text-align:right;"> 104,959 </td>
+   <td style="text-align:right;"> 27,783 </td>
+   <td style="text-align:right;"> 104,952 </td>
    <td style="text-align:right;"> 26.5 </td>
   </tr>
   <tr>
@@ -1337,8 +1337,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Riverina </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,782 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 105,929 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,772 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 105,836 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4.5 </td>
   </tr>
   <tr>
@@ -1355,8 +1355,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Robertson </td>
-   <td style="text-align:right;"> 9,125 </td>
-   <td style="text-align:right;"> 101,485 </td>
+   <td style="text-align:right;"> 9,119 </td>
+   <td style="text-align:right;"> 101,463 </td>
    <td style="text-align:right;"> 9.0 </td>
   </tr>
   <tr>
@@ -1410,7 +1410,7 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Warringah </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 10,051 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 114,897 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 114,895 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 8.7 </td>
   </tr>
   <tr>
@@ -1427,8 +1427,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Watson </td>
-   <td style="text-align:right;"> 7,402 </td>
-   <td style="text-align:right;"> 82,856 </td>
+   <td style="text-align:right;"> 7,399 </td>
+   <td style="text-align:right;"> 82,834 </td>
    <td style="text-align:right;"> 8.9 </td>
   </tr>
   <tr>
@@ -1463,8 +1463,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;"> 2025 </td>
    <td style="text-align:center;"> GRN </td>
    <td style="text-align:left;"> Werriwa </td>
-   <td style="text-align:right;"> 9,771 </td>
-   <td style="text-align:right;"> 87,640 </td>
+   <td style="text-align:right;"> 9,747 </td>
+   <td style="text-align:right;"> 87,614 </td>
    <td style="text-align:right;"> 11.1 </td>
   </tr>
   <tr>
@@ -1481,8 +1481,8 @@ There are three separate figures for the Greens in the AEC voting figures: Austr
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> GRN </td>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> Whitlam </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 13,570 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 109,337 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 13,558 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 109,316 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 12.4 </td>
   </tr>
 </tbody>
@@ -1558,7 +1558,7 @@ Informal Senate votes have already been removed by the Australian Electoral Comm
 
 
 
-There were 792,680 more people who lodged formal votes for the Senate in 2025 than in 2022.
+There were 830,531 more people who lodged formal votes for the Senate in 2025 than in 2022.
 
 
 
@@ -1585,8 +1585,8 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;"> ACT </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 293,027 </td>
-   <td style="text-align:right;"> 293,027 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> 293,474 </td>
   </tr>
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
@@ -1597,8 +1597,8 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,972,738 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,972,738 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NT </td>
@@ -1621,8 +1621,8 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,209,629 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,209,629 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SA </td>
@@ -1645,8 +1645,8 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,446 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,446 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> VIC </td>
@@ -1657,8 +1657,8 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;"> VIC </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 4,096,878 </td>
-   <td style="text-align:right;"> 4,096,878 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
   </tr>
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
@@ -1669,8 +1669,8 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,618,741 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,618,741 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
   </tr>
 </tbody>
 </table>
@@ -1709,9 +1709,9 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;"> ACT </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 293,027 </td>
-   <td style="text-align:right;"> 293,027 </td>
-   <td style="text-align:right;"> 92,984 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> 93,135 </td>
    <td style="text-align:right;"> 31.7 </td>
   </tr>
   <tr>
@@ -1725,9 +1725,9 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,972,738 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,972,738 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,872,188 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,876,713 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 37.6 </td>
   </tr>
   <tr>
@@ -1757,9 +1757,9 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,209,629 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,209,629 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 979,535 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 982,811 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 30.5 </td>
   </tr>
   <tr>
@@ -1789,9 +1789,9 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,446 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,446 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 130,866 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 130,967 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 35.2 </td>
   </tr>
   <tr>
@@ -1805,9 +1805,9 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;"> VIC </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 4,096,878 </td>
-   <td style="text-align:right;"> 4,096,878 </td>
-   <td style="text-align:right;"> 1,420,650 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 1,422,364 </td>
    <td style="text-align:right;"> 34.7 </td>
   </tr>
   <tr>
@@ -1821,9 +1821,9 @@ There were 792,680 more people who lodged formal votes for the Senate in 2025 th
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,618,741 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,618,741 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 585,614 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 586,692 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 36.2 </td>
   </tr>
 </tbody>
@@ -1874,9 +1874,9 @@ The Greens go by different party names, depending on their state: Australian Gre
   <tr>
    <td style="text-align:left;"> ACT </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 293,027 </td>
-   <td style="text-align:right;"> 293,027 </td>
-   <td style="text-align:right;"> 22,836 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> 22,838 </td>
    <td style="text-align:right;"> 7.8 </td>
   </tr>
   <tr>
@@ -1890,9 +1890,9 @@ The Greens go by different party names, depending on their state: Australian Gre
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,972,738 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,972,738 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 556,901 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 557,610 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 11.2 </td>
   </tr>
   <tr>
@@ -1922,10 +1922,10 @@ The Greens go by different party names, depending on their state: Australian Gre
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,209,629 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,209,629 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 335,087 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 10.4 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 337,746 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 10.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SA </td>
@@ -1954,9 +1954,9 @@ The Greens go by different party names, depending on their state: Australian Gre
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,446 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,446 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 60,591 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 60,650 </td>
    <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 16.3 </td>
   </tr>
   <tr>
@@ -1970,10 +1970,10 @@ The Greens go by different party names, depending on their state: Australian Gre
   <tr>
    <td style="text-align:left;"> VIC </td>
    <td style="text-align:center;"> 2025 </td>
-   <td style="text-align:right;"> 4,096,878 </td>
-   <td style="text-align:right;"> 4,096,878 </td>
-   <td style="text-align:right;"> 510,061 </td>
-   <td style="text-align:right;"> 12.4 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 510,835 </td>
+   <td style="text-align:right;"> 12.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
@@ -1986,10 +1986,10 @@ The Greens go by different party names, depending on their state: Australian Gre
   <tr>
    <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
    <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,618,741 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,618,741 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 208,050 </td>
-   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 12.9 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 208,327 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 12.8 </td>
   </tr>
 </tbody>
 </table>
@@ -1998,5 +1998,163 @@ The Greens go by different party names, depending on their state: Australian Gre
 
 
 ![](elections_v1_files/figure-html/unnamed-chunk-50-1.png)<!-- -->
+
+<br>
+
+
+## Senate: Percentage of first preference votes for One Nation - 2022 and 2025
+
+
+
+
+
+
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> StateAb </th>
+   <th style="text-align:center;"> Year </th>
+   <th style="text-align:right;"> state_votes </th>
+   <th style="text-align:right;"> state_formal </th>
+   <th style="text-align:right;"> on_votes </th>
+   <th style="text-align:right;"> on_pc </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> ACT </td>
+   <td style="text-align:center;"> 2022 </td>
+   <td style="text-align:right;"> 285,217 </td>
+   <td style="text-align:right;"> 285,217 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ACT </td>
+   <td style="text-align:center;"> 2025 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> 293,474 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2022 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,800,722 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,800,722 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 198,121 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> NSW </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 4,986,832 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 302,438 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 6.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NT </td>
+   <td style="text-align:center;"> 2022 </td>
+   <td style="text-align:right;"> 103,617 </td>
+   <td style="text-align:right;"> 103,617 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NT </td>
+   <td style="text-align:center;"> 2025 </td>
+   <td style="text-align:right;"> 106,807 </td>
+   <td style="text-align:right;"> 106,807 </td>
+   <td style="text-align:right;"> 8,305 </td>
+   <td style="text-align:right;"> 7.8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2022 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,013,868 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,013,868 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 222,925 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> QLD </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3,224,436 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 229,746 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 7.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SA </td>
+   <td style="text-align:center;"> 2022 </td>
+   <td style="text-align:right;"> 1,128,524 </td>
+   <td style="text-align:right;"> 1,128,524 </td>
+   <td style="text-align:right;"> 45,249 </td>
+   <td style="text-align:right;"> 4.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SA </td>
+   <td style="text-align:center;"> 2025 </td>
+   <td style="text-align:right;"> 1,164,072 </td>
+   <td style="text-align:right;"> 1,164,072 </td>
+   <td style="text-align:right;"> 62,131 </td>
+   <td style="text-align:right;"> 5.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2022 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 361,048 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 361,048 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 14,013 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> TAS </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 371,790 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 19,218 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> VIC </td>
+   <td style="text-align:center;"> 2022 </td>
+   <td style="text-align:right;"> 3,821,539 </td>
+   <td style="text-align:right;"> 3,821,539 </td>
+   <td style="text-align:right;"> 111,176 </td>
+   <td style="text-align:right;"> 2.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> VIC </td>
+   <td style="text-align:center;"> 2025 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 4,101,762 </td>
+   <td style="text-align:right;"> 182,228 </td>
+   <td style="text-align:right;"> 4.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2022 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,526,123 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,526,123 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 53,260 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 3.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: rgba(238, 238, 238, 255) !important;"> WA </td>
+   <td style="text-align:center;background-color: rgba(238, 238, 238, 255) !important;"> 2025 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 1,622,016 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 95,230 </td>
+   <td style="text-align:right;background-color: rgba(238, 238, 238, 255) !important;"> 5.9 </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+
+![](elections_v1_files/figure-html/unnamed-chunk-53-1.png)<!-- -->
 
 

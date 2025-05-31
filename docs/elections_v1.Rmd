@@ -1056,4 +1056,91 @@ ggsave(file = "../figs/senate_grn_first_pref.pdf", dev = "pdf")
 
 ```
 
+<br>
+
+
+## Senate: Percentage of first preference votes for One Nation - 2022 and 2025
+
+
+```{r message = F}
+
+s_on_n_22 <-
+  svotes2022 %>%
+  filter(GroupAb == "ON") %>%
+  group_by(StateAb) %>%
+  summarise(on_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2022")
+
+s_on_n_22 <-
+  full_join(s_on_n_22, s_state_votes_22) %>%
+  write_csv(., file = "s_on_n_22.csv")
+
+
+s_on_n_25 <-
+  svotes2025 %>%
+  filter(GroupAb == "ON") %>%
+  group_by(StateAb) %>%
+  summarise(on_votes = sum(TotalVotes)) %>%
+  mutate(Year = "2025")
+
+s_on_n_25 <-
+  full_join(s_on_n_25, s_state_votes_25) %>%
+  write_csv(., file = "s_on_n_25.csv")
+
+
+s_on_n_2225 <-
+  bind_rows(s_on_n_22, s_on_n_25)
+
+```
+
+
+
+```{r message = F}
+
+s_on_pc_2225 <- 
+  full_join(s_on_n_2225, s_state_votes_2225) %>%
+  mutate(on_pc = on_votes / state_formal * 100) %>%
+  select(StateAb, Year, state_votes,
+         #state_informal,
+         state_formal,
+         on_votes, on_pc) %>%
+  arrange(StateAb, Year)
+
+## "select" must go into code above so columns are in right order 
+##   for section below
+
+## Format the data to display a nice table
+
+s_on_pc_2225 %>%
+  mutate(across(state_votes:on_votes, ~ number(.x, big.mark = ","))) %>%
+  mutate(across("on_pc", ~ round(.x, 1))) %>%
+  kable(booktabs = T, col.names = names(s_on_pc_2225), 
+        align = "lcrrrrr") %>%
+  row_spec(c(3, 4, 7, 8, 11, 12, 15, 16), background = "#eeeeee") %>%
+  kable_styling(full_width = F)
+         
+
+```
+
+<br>
+
+
+```{r message = F, warning = F}
+
+ggplot(s_on_pc_2225, aes(x = StateAb, y = on_pc, 
+                          shape = factor(Year))) +
+  geom_point() +
+  #scale_y_continuous(breaks = seq(10, 20, 2)) +
+  guides(shape = guide_legend(title = "Year")) +
+  labs(title = "Senate: One Nation - Percentage of first preference votes", 
+       #subtitle = "AEC data at 2025-05-18",
+       subtitle = paste("AEC data at", date_data, sep = " "), 
+       x = "State", y = "Percentage of votes")
+
+## Save plot
+
+ggsave(file = "../figs/senate_on_first_pref.pdf", dev = "pdf")
+
+```
+
 
